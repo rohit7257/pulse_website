@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100vh;
+            width: 100vw;
+        }
+        nav{
+            height: 150px;
+            /* border: 2px solid blue; */
+            background-color: #eafaf1;
+            display: flex;
+            justify-content: space-around;
+        }
+        .nav_logo{
+            width: 11%;
+            /* border: 2px solid blue; */
+            display: flex;
+            align-items: center;
+        }
+        nav img{
+            height: 35%;
+
+        }
+        .nav_links{
+            width: 40%;
+            /* border: 2px solid red; */
+            display: flex;
+            align-items:center;
+            justify-content: space-evenly;
+        }
+        .nav_links a{
+            text-decoration: none;
+            color: #1fe374;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .nav_links a:hover{
+            color: #080c16;
+        }
+        #price{
+            color: #080c16;
+        }
+        .nav_links button{
+            height: 50px;
+            width: 100px;
+            font-size: 1rem;
+            background-color: #eafaf1;
+            color: #1fe374;
+            border: 2px solid #1fe374;
+            border-radius: 5px;
+        }
+        .nav_links button:hover{
+           box-shadow: -10px 10px #00ad6a;
+        }
+        main{
+            height: 32%;
+            /* border: 2px solid blue; */
+            background-color: #eafaf1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main_heading{
+            width: 45%;
+            /* border: 2px solid blue; */
+            text-align: center;
+            /* font-size: 2rem; */
+            /* font-weight: bold; */
+        }
+        .main_heading h1{
+            font-size: 3.5rem;
+            font-weight: bolder;
+        }
+        .main_para{
+            width: 45%;
+            /* border: 2px solid red; */
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 1.5;
+        }
+        .section1{
+            height: 100%;
+            /* border: 2px solid red; */
+            background-color: #eafaf1;
+            display: flex;
+            justify-content: center;
+        }
+        .section1_content{
+            width: 70%;
+            /* border: 2px dashed red; */
+            display: flex;
+            align-items: center;
+        }
+        .content1_left{
+            height: 60%;
+            width: 32%;
+            /* border: 2px solid blue; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .left_head{
+            width: 95%;
+            color: #00ad6a;
+            font-size: 1.2rem; 
+        }
+        .left_list{
+            width: 80%;
+            font-size: 1.2rem;
+            line-height: 1.3;
+            opacity: 0.7;
+        }
+        .left_para{
+            width: 90%;
+            font-size: 1.2rem;
+        }
+        .left_para a{
+            color: #080c16;
+        }
+        .content1_middle{
+            height: 90%;
+            width: 35%;
+            border: 2px solid #1fe374;
+            background-color: #fcfcfc;
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .middle_head{
+            height: 5%;
+            width: 100%;
+            background-color: #00ad6a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content1_middle h4{
+            color: #fcfcfc;
+        }
+        .content1_middle h2{
+            color: #00ad6a;
+            font-size: 3.2rem;
+            text-align: center;
+        }
+        .content1_middle p{
+            color: #080c16;
+            font-size: 2.3rem;
+            opacity: 0.7;
+        }
+        .middle_button{
+            height: 15%;
+            width: 70%;
+            /* border: 2px solid blue; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .middle_button button{
+            height: 60px;
+            width: 240px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background-color: #1fe374;
+            border: none;
+            border-radius: 5px;
+            opacity: 0.7;
+        }
+        .middle_button button:hover{
+            height: 70px;
+            width: 280px;   
+            font-size: 1.3rem;
+            opacity: 1;  
+        }
+        .middle_content{
+            width: 70%;
+            /* border: 2px solid red; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .middle_list_head h5{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .middle_list_head{
+            /* border: 2px solid blue; */
+            width: 90%;
+            font-size: 1.1rem;
+        }
+        .middle_list{
+            width: 95%;
+            height: 40%;
+            /* border: 2px solid blue; */
+        }
+        .list{
+            display: flex;
+            margin-bottom: 12px;
+        }
+        .list a{
+            text-decoration: none;
+            line-height: 1.3;
+            font-size: 1.1rem;
+            color: #080c16;
+            opacity: 0.8;
+        }
+        i{
+            color: #1fe374;
+            font-size: 1.3rem;
+        }
+        .content1_right{
+            height: 80%;
+            border: 1px solid #00ad6a;
+            background-color: #fcfcfc;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 33%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .right_content{
+            height: 15%;
+            background-color:#d6dae5;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .content_right{
+            width: 80%;
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+        .right_heading{
+            text-align: center;
+        }
+        .right_heading h2{
+            color: #00ad6a;
+            font-weight: 100;
+            font-size: 2.3rem;
+        }
+        .right_heading p{
+            color: #080c16;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+        .right_list{
+            width: 92%;
+        }
+        .section2{
+            height: 50%;
+            background-color: #eafaf1;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .section2_content{
+            width: 50%;
+            /* border: 2px solid blue; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .section2_para{
+            text-align: center;
+            font-size: 1.8rem;
+            line-height: 1.4;
+        }
+        .section2_para h6{
+            color: #00ad6a; 
+        }
+        .section3{
+            height: 120%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .section3_content{
+            width: 80%;
+            height: 100%;
+            /* border: 2px solid green; */
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .section3_box_heading{
+            height: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .section3_head{
+            width: 95%;
+            font-size: 1.5rem;
+        }
+        .section3_box_text{
+            width: 100%;
+            /* border: 2px solid blue; */
+            display: flex;
+            justify-content: space-around;
+        }
+        .left_box{
+            width: 46%;
+        }
+        .right_box{
+            width: 46%;
+        }
+        .section3_box_text p{
+            font-size: 1.3rem;
+            line-height: 1.3;
+        }
+        .section3_box_text h4{
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        footer{
+            background-color: #080c16;
+            height: 65%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer_content{
+            width: 80%;
+            height: 80%;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer_left_box{
+            /* border: 2px solid blue; */
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .footer_left_logo{
+            width: 90%;
+            /* border: 2px solid red; */
+        }
+        .footer_left_logo img{
+            width: 220px;
+            height: 80px;
+        }
+        .footer_left_button{
+            width: 90%;
+            /* border: 2px solid green; */
+        }
+        .footer_left_button button{
+            height: 55px;
+            width: 300px;
+            background-color: #1fe374;
+            border: none;
+            font-weight: 600;
+            border-radius: 10px;
+        }
+        .footer_left_button button:hover{
+            box-shadow: -5px 5px #d6dae5;
+            border-radius: 10px;
+        }
+        .footer_right_box{
+            width: 50%;
+            /* border: 2px solid blue; */
+            display: flex;
+            align-items: center;
+        }
+        .footer_right_links{
+            width: 33%;
+            height: 50%;
+            /* border: 2px solid green; */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .footer_right_links h3{
+            font-size: 1.5rem;
+            color: #fcfcfc;
+        }
+        .footer_right_links a{
+            text-decoration: none;
+            color: #1fe374;
+            font-size: 1.4rem;
+        }
+
+            
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav_logo">
+            <img src="./image1.png" alt="">
+        </div>
+        <div class="nav_links">
+            <a href="">Features</a>
+            <a href="">Customer Stories</a>
+            <a href="" id="price">Pricing</a>
+            <a href="">Blog</a>
+           <a href=""><button>Sign Up</button></a>
+        </div>
+    </nav>
+    <main>
+        <div class="main_heading">
+            <h1>Try Pulse free for <br>30 days.</h1>
+        </div>
+        <div class="main_para">See why Pulse is the best way to monitor your cash flow. Sign up for any plan and try Pulse absolutely free for 30 days. </div>
+    </main>
+    <div class="section1">
+        <div class="section1_content">
+            <div class="content1_left">
+                <div class="left_head">
+                    <h3>These are what we call the Pulse Basics. They’re what every customer gets.</h3>
+                </div>
+                <div class="left_list">
+                    <ul>
+                        <li>Manage cash flow on a daily, weekly, monthly, or yearly basis</li>
+                        <li>Forecast growth with recurring income or expenses that scale automatically</li>
+                        <li>See Money In and Money Out, categorize transactions, and run helpful reports</li>
+                        <li>Toggle entries and accounts on and off to game out different scenarios</li>
+                    </ul>
+                </div>
+                <div class="left_para">
+                    <p>Just need the Pulse Basics?<br><a href="">Get Them now</a> for $29 per month.</p>
+                </div>
+            </div>
+            <div class="content1_middle">
+                <div class="middle_head">
+                    <h4>RECOMMENED</h4>
+                </div>
+                <div class="middle_content">
+                    <h2>Small <br>Business <br>Plan</h2>
+                    <p>$59 per month</p>
+                </div>
+                <div class="middle_button">
+                    <a href=""><button>Sign Up Now</button></a>
+                </div>
+                <div class="middle_list_head">
+                    <h5>YOU GET PULSE BASICS, PLUS:</h5>
+                </div>
+                <div class="middle_list">
+                    <div class="list">
+                        <div class="list_icon"><i class="ri-check-line"></i></div>
+                        <div class="list_text"><a href="">Manage cash flow multiple financial accounts</a></div>
+                    </div>
+                    <div class="list">
+                        <div class="list_icon"><i class="ri-check-line"></i></div>
+                        <div class="list_text"><a href="">Invite your investors, book keeper, or management team to see reports or manage cash flow</a></div>
+                    </div>
+                    <div class="list">
+                        <div class="list_icon"><i class="ri-check-line"></i></div>
+                        <div class="list_text"><a href="">Integrate with Qucikbooks Online for more accurate cash flow</a></div>
+                    </div>
+                    <div class="list">
+                        <div class="list_icon"><i class="ri-check-line"></i></div>
+                        <div class="list_text"><a href="">Track your actual cash flow alongside your projected cash flow</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content1_right">
+                <div class="right_content">
+                    <div class="content_right">
+                        <p>Complex business with multiple financial accounts, currencies, or auditing needs?</p>
+                    </div>
+                </div>
+                <div class="right_heading">
+                    <h2>Unlock Extra <br>Features</h2>
+                    <p>$89 per month</p>
+                </div>
+                <div class="middle_button">
+                    <a href=""><button>Try Premium</button></a>
+                </div>
+                <div class="right_list_head">
+                    <h5>GET IT ALL, PLUS:</h5>
+                </div>
+                <div class="right_list">
+                    <div class="list">
+                        <div class="right_list_icon"><i class="ri-check-line"></i></div>
+                        <div class="right_list_text">
+                            <a href="">Manage cash flow across unlimited financial accounts</a>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="right_list_icon"><i class="ri-check-line"></i></div>
+                        <div class="right_list_text">
+                            <a href="">Convert to any currency for localized cash flow reporting and projections</a>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="right_list_icon"><i class="ri-check-line"></i></div>
+                        <div class="right_list_text">
+                            <a href="">Attach invoices or contracts to your cash flow entires for accountability and auditing</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section2">
+        <div class="section2_content">
+            <div class="section2_logo">
+                <img src="./image2.png" alt="">
+            </div>
+            <div class="section2_para">
+                <p>“Pulse is worth every penny because it empowers business owners with critical financial insight and knowledge.”</p>
+                <h6>Subvert Marketing, Inc.</h6>
+            </div>
+        </div>
+    </div>
+    <div class="section3">
+        <div class="section3_content">
+            <div class="section3_box_heading">
+                <div class="section3_head"><h1>FAQ</h1></div>
+            </div>
+            <div class="section3_box_text">
+                <div class="left_box">
+                    <h4>How does the 30-day free trial work?</h4>
+                    <p>You can use Pulse absolutely free for 30 days. After 30 days, we will charge the credit card you used when you sign up. If you choose to cancel your account before your trial ends, your card will not be charged.</p>
+                </div>
+                <div class="right_box">
+                    <h4>If I upgrade an existing account, do I get another free trial?</h4>
+                    <p>Brand new accounts are the only ones eligible for a 30-day free trial. If you upgrade an existing account, your credit card will be billed the new amount on the date of your next billing cycle.</p>
+                </div>
+            </div>
+            <div class="section3_box_text">
+                <div class="left_box">
+                    <h4>What is a “Financial Account”?</h4>
+                    <p>Financial Accounts are a grouping of income and expense items that can be used for tracking or reporting purposes. <br><br>They’re designed to be flexible and can be used to differentiate between bank accounts, companies, individuals or between personal and business entries.</p>
+                </div>
+                <div class="right_box">
+                    <h4>Do I have to commit to a long-term contract?</h4>
+                    <p>No. There is no contract when you use Pulse, other than agreeing to our Terms of Service.</p>
+                </div>
+            </div>
+            <div class="section3_box_text">
+                <div class="left_box">
+                    <h4>Will I be able to cancel my account if I don’t use Pulse?</h4>
+                    <p>Yes – you can cancel your account at any time. To cancel your account, go to your billing page and click on “Please cancel my account” at the bottom of the page. The account owner is the only one who can cancel an account. An email request to delete an account is not considered cancellation.</p>
+                </div>
+                <div class="right_box">
+                    <h4>What types of payments do you accept?</h4>
+                    <p>We accept payments made online using Visa, Mastercard, Discover, and American Express.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_content">
+            <div class="footer_left_box">
+                <div class="footer_left_logo">
+                    <img src="./image1.png" alt="">
+                </div>
+                <div class="footer_left_button">
+                    <a href=""><button>Sign Up for a Free 30-Days Trial</button></a>
+                </div>
+            </div>
+            <div class="footer_right_box">
+                <div class="footer_right_links">
+                    <h3>Product</h3>
+                    <a href="">Features</a>
+                    <a href="">Pricing</a>
+                    <a href="">Sign Up</a>
+                </div>
+                <div class="footer_right_links">
+                    <h3>Company</h3>
+                    <a href="">Customer Stories</a>
+                    <a href="">About</a>
+                    <a href="">Contact</a>
+                </div>
+                <div class="footer_right_links">
+                    <h3>Resources</h3>
+                    <a href="">Support</a>
+                    <a href="">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
